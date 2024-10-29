@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Watch Position and Close Watch Demo</title>
+    </head>
+    <body>
+        <button onclick="startwatch()">Watch Position</button>
+        <button onclick="stopwatch()">Clear Position</button>
+        <div id="geo"></div>
+        <script>
+            var wp;
+            function startwatch() {
+                if (navigator.geolocation) {
+                    wp = navigator.geolocation.watchPosition(showPosition, showError);
+                } else {
+                    document.getElementById("geo").innerHTML = "Your current browser does not support geolocation";
+                }
+            }
+            function stopwatch() {
+                if (wp) {
+                    navigator.geolocation.clearWatch(wp);
+                    alert("Geolocation is successfully stopped");
+                }
+            }
+            function showPosition(position) {
+                var latlon = position.coords.latitude + "," + position.coords.longitude;
+                document.getElementById("geo").innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude+"<br>Accuracy: " + position.coords.accuracy+"<br>Speed: " + position.coords.speed;
+            }
+            function showError(error) {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                         alert("User denied the request for Geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("The request to get user location timed out.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert("An unknown error occurred.");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

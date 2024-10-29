@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Svg Demo</title>
+    </head>
+    <body>
+        <svg width="500" height="500">
+            <circle cx="250" cy="250" r="150" fill="black" onclick="getColor()" id="circle"/>
+        </svg>
+        <svg width="500" height="500">
+            <rect x="100" y="100" width="200" height="100" fill="green" onclick="getSize()" id="rec"/>
+        </svg>
+        <script>
+            function getColor() {
+                alert(document.getElementById('circle').getAttribute('fill'));
+            }
+            function getSize() {
+                alert(document.getElementById('rec').getAttribute('width')*document.getElementById('rec').getAttribute('height')+"px");
+            }
+        </script>
+    </body>
+</html>

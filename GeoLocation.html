@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>GeoLocation Demo</title>
+    </head>
+    <body>
+        <button onclick="getlocation()">Track Location</button>
+        <div id="geo"></div>
+        <script>
+            function getlocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    document.getElementById("geo").innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }function showPosition(Position) {
+                document.getElementById("geo").innerHTML = "Latitude: " + Position.coords.latitude+"<br>Longitude: " + Position.coords.longitude;
+            }
+        </script>
+    </body>
+</html>

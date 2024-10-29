@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            web workers
+        </title>
+    </head>
+    <body>
+        <button onclick="welcome()">Welcome!!</button>
+        <button onclick="generate()">Generate!!</button>
+        <button onclick="hello()">Hello!!</button>
+        <script>
+            function hello(){
+                alert("Hello!!");
+            }
+            function welcome(){
+                alert("Welcome!!");
+            }
+            function generate(){
+                var w;
+                if(typeof(Worker)!=="undefined"){
+                    if(typeof(W)!=="defined"){
+                        w=new Worker("web_worker_func.js");
+                        w.onmessage=function(event){
+                            alert(event.data);
+                        }
+                    }
+                    else{
+                        alert("Worker is already running!!");
+                    }
+                }
+                else{
+                    alert("Your browser doesn't support web workers!!");
+                }
+            }
+        </script>
+    </body>
+</html>

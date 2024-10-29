@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head><title>canvas additional</title></head>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Draw the rectangle first
+var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+grd.addColorStop(0, "yellow");
+grd.addColorStop(1, "white");
+ctx.fillStyle = grd;
+ctx.fillRect(10, 10, 150, 100);
+
+// Create a linear gradient for the text stroke
+var textGradient = ctx.createLinearGradient(0, 0, 500, 0);
+textGradient.addColorStop(0, "green");
+textGradient.addColorStop(1, "yellow");
+
+// Then draw the text
+ctx.font = "30px Arial";
+ctx.strokeStyle = textGradient;
+ctx.strokeText("Rectangle", 20, 150);
+
+// Create a linear gradient for the circle
+const lgrad = ctx.createLinearGradient(210, 0, 290, 0);
+lgrad.addColorStop(0, "blue");
+lgrad.addColorStop(1, "white");
+ctx.fillStyle = lgrad;
+ctx.beginPath();
+ctx.arc(250, 60, 40, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+// Apply gradient stroke to the text
+ctx.strokeText("Circle", 210, 150);
+
+</script>
+
+</body>
+</html>

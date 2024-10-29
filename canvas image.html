@@ -1,0 +1,25 @@
+<html>
+    <head><title>canvas image</title></head>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    <body>
+        <img src="C:\\Users\\HP\\OneDrive\\Desktop\\sharma.jpg" height="200px" width="300px" id="cap">
+        <button onclick="img()">create image</button>
+        <canvas width="950" height="800" id="c" style="border:2px solid black"></canvas>
+        <script>
+            var can=document.getElementById("c");
+            var ctx=can.getContext("2d");
+            ctx.fillText("Copying image....",100,100);
+            ctx.fillStyle="red";
+            ctx.fillRect(20,20,70,70);
+            function img(){
+                var img1=document.getElementById("cap");
+                ctx.drawImage(img1,100,200);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+            web workers
+        </title>
+    </head>
+    <body>
+        <button onclick="startWorker()">Startworker</button>
+        <button onclick="stopWorker()">Stopworker</button>
+        <p id="p"></p>
+        <script>
+            var w;
+            function startWorker(){
+                if(typeof(Worker)!=="undefined"){
+                    if(typeof(w)!=="defined"){
+                        w=new Worker("counter_web.js");
+                        w.onmessage=function(event){
+                            document.getElementById("p").innerHTML="The Counter value is Incremented to : "+event.data+" ";
+                        }
+                    }
+                    else{
+                        alert("Worker is already running!!");
+                    }
+                }
+                else{
+                    alert("Your browser doesn't support web workers!!");
+                }
+            }
+            function stopWorker(){
+                w.terminate();
+                w="undefined";
+            }
+        </script>
+    </body>
+</html>

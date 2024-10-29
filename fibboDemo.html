@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Generator</title>
+</head>
+<body>
+    <h1>Fibonacci Number Generator</h1>
+    <button id="generateNumber" onclick="generate()">Generate Next Fibonacci Number</button>
+    <p id="fibonacciNumber">0</p>
+
+    <script>
+        var fib1 = 0, fib2 = 1;
+
+        function generate() {
+            var nextFib = fib1 + fib2;
+            document.getElementById('fibonacciNumber').innerText = nextFib;
+            fib1 = fib2;
+            fib2 = nextFib;
+        }
+    </script>
+</body>
+</html>

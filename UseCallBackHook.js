@@ -14,24 +14,22 @@ function UseCallbackHook() {
         setCounter((prevCounter) => prevCounter + 1);
     }, []);
 
-    return ( <
-        div >
-        <
-        h1 > Example with useCallback < /h1> <
-        input type = "number"
-        placeholder = "Enter a number"
-        value = { number }
-        onChange = { onChangeHandler }
-        />
+    return (
+        <div>
+            <h1>Example with useCallback</h1>
+            <input
+                type="number"
+                placeholder="Enter a number"
+                value={number}
+                onChange={onChangeHandler}
+            />
 
-        <
-        div > OUTPUT: { squareNum(number) } < /div> <
-        button onClick = { counterHandler } >
-        Counter++
-        <
-        /button> <
-        div > Counter: { counter } < /div> <
-        /div>
+            <div>OUTPUT: {squareNum(number)}</div>
+            <button onClick={counterHandler}>
+                Counter ++
+            </button>
+            <div>Counter : {counter}</div>
+        </div>
     );
 }
 

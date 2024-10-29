@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Drag and Drop</title>
+</head>
+
+<body>
+    <p>This webpage supports drag and drop</p>
+    <div id="d" style="width:300px;height:300px;border:1px solid red;" ondragover="allowDrag(event)" ondrop="drop(event)"></div>
+    <img src="C:\Users\HP\OneDrive\Desktop\captain.jpeg" id="i" draggable="true" ondragstart="drag(event)">
+    <script>
+        function allowDrag(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text/html", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var d1 = ev.dataTransfer.getData("text/html");
+            ev.target.appendChild(document.getElementById(d1));
+        }
+    </script>
+</body>
+
+</html>

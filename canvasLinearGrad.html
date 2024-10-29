@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title> Canvas Demo</title>
+    </head>
+    <body>
+        <img src ="img.png" id="i"/>
+        <button onclick="draw()"/>
+        <canvas width="300" height="300" style="border: solid;" id="C"></canvas>
+        <script>
+            var can = document.getElementById("C");
+            var ctx = can.getContext("2d");
+            ctx.fillText("drawing an image",10,10);
+            ctx.fillstyle = "red";
+            ctx.fillRect(20,20,70,70);
+            function draw(){
+                var img = document.getElementById("i");
+                ctx.drawImg(img,100,100);
+            }
+        </script>
+    </body>
+</html>

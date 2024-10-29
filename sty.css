@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
+    grid-template-rows: repeat(5, 50px);
+    gap: 5px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+}
+
+.color1 {
+    background-color: #FA8128;
+}
+
+.color2 {
+    background-color: #F0c08A;
+}
+
+.color3 {
+    background-color: #964B00;
+}

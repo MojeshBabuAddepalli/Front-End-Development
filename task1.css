@@ -1,19 +1,14 @@
 .box{
     width:400px;
-    height:300;
+    height:700px;
     border:2px solid #333;
     padding:20px;
-    margin:30px auto;
+    margin:30px;
 }
 h1{
     font-size: 24px;
     margin-bottom: 10px;
-}
-p{
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding:10px;
     background-color: #f0f0f0;
 }
 img{

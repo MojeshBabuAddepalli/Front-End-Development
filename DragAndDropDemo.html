@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Drag and Drop Demo</title>
+</head>
+
+<body>
+    <p>This is Drag and Drop Example</p>
+    <div id="d" style="width=300;height=300;border:1px solid red ;" ondrop="drop(event)" ondragover="allowDrag(event)"></div>
+    <img id="i" src="C:\Users\HP\OneDrive\Desktop\captain.jpeg" draggable="true" ondragstart="drag(event)" />
+    <script>
+        function allowDrag(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text/html", event.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = event.dataTransfer.getData("text/html");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>
